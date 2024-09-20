@@ -1,0 +1,24 @@
+.card-tasks {
+  max-width: 1440px;
+  width: 450px;
+  height: 446px;
+  margin: 40px auto 24px;
+  border: 1px solid #eaecf0;
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.card-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.btn-add-home {
+  font-weight: 500;
+  background: linear-gradient(90deg, #0796d3 0%, #53c0f0 68.65%);
+  color: #ffffff;
+  display: block;
+  margin: 0 auto;
+  width: 450px;
+}
