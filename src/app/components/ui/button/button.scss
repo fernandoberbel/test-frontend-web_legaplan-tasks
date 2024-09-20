@@ -1,0 +1,37 @@
+button {
+  font-size: 1rem;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-add-home {
+  font-weight: 500;
+  background: linear-gradient(90deg, #0796d3 0%, #53c0f0 68.65%);
+  color: #ffffff;
+  display: block;
+  margin: 0 auto;
+  width: 450px;
+}
+
+.btn-add {
+  font-weight: 500;
+  background: linear-gradient(90deg, #0796d3 0%, #53c0f0 68.65%);
+  color: #ffffff;
+  width: 50%;
+}
+
+.btn-del {
+  font-weight: 500;
+  background: linear-gradient(90deg, #d30707 0%, #f05353 68.65%);
+  color: #ffffff;
+  width: 50%;
+}
+
+.btn-cancel {
+  font-weight: 400;
+  background-color: #e7eefb;
+  color: #000000;
+  width: 50%;
+}
