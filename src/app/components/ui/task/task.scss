@@ -1,0 +1,40 @@
+.container-task {
+  display: flex;
+  width: full;
+  padding: 16px;
+  align-items: center;
+  border: 1px dashed #d7dde9;
+  /* aumentar o espaçamento do dashed */
+  border-radius: 8px;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.label-checkbox:hover {
+  background-color: #f7f9fd;
+}
+
+input {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  /* colorir o checkbox */
+}
+
+.task-name {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  flex-grow: 1;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.btn-trash {
+  width: 24px;
+  height: 24px;
+  background: none;
+}
+
+.trash-icon {
+}
