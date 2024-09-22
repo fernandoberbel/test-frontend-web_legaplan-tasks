@@ -1,36 +1,67 @@
-import { ButtonAdd, ButtonCancel } from "../ui/button/button";
-import "./modal-add-task.scss";
-import { FunctionComponent } from "react";
+"use client";
 
-interface CardProps {
+import "./modal-add-task.scss";
+import { FunctionComponent, useState } from "react";
+import { ButtonAdd, ButtonCancel } from "../ui/buttons/buttons";
+
+interface ModalAddTaskProps {
   isOpen: boolean;
   onClose: () => void;
+  addTask: (newTask: string) => void;
 }
 
-const ModalAddTask: FunctionComponent<CardProps> = ({ isOpen, onClose }) => {
+const ModalAddTask: FunctionComponent<ModalAddTaskProps> = ({
+  isOpen,
+  onClose,
+  addTask,
+}) => {
+  const [task, setTask] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTask(e.target.value);
+  };
+
+  const submitTask = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (task.trim() === "") {
+      alert("Digite uma tarefa!");
+      return;
+    }
+
+    addTask(task);
+    alert("Tarefa Adicionada!");
+    setTask("");
+    onClose();
+  };
+
   if (isOpen) {
     return (
       <div className="modal-task">
-        <form className="card">
+        <div className="container-form">
           <h2>Nova tarefa</h2>
 
-          <label htmlFor="">Título</label>
+          <form id="form-task" onSubmit={submitTask}>
+            <label htmlFor="new-task">Título</label>
 
-          <div className="label-input">
-            <input
-              type="text"
-              name="nova-tarefa"
-              id="new-task"
-              placeholder="Digite"
-              className="new-task"
-            />
+            <div className="label-input">
+              <input
+                className="new-task"
+                id="new-task"
+                type="text"
+                name="new-task"
+                placeholder="Digite"
+                value={task}
+                onChange={handleChange}
+              />
 
-            <div className="btn-container">
-              <ButtonCancel text="Cancelar" onClick={onClose} />
-              <ButtonAdd text="Adicionar" />
+              <div className="btn-container">
+                <ButtonCancel text="Cancelar" onClick={onClose} />
+                <ButtonAdd value="Adicionar" />
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     );
   }
